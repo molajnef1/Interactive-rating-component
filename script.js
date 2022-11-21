@@ -1,18 +1,41 @@
 var button = document.getElementById("Submit");
 var rate_parent = document.getElementById("rate-parent");
+var rating_state = document.getElementById("rating");
+var thanks_state = document.getElementById("thanks_state");
+var desired_rate = document.getElementById("desired-rate");
 var values = Array.from(rate_parent.children);
-console.log(rate_parent)
-console.log(values)
+var orange = "hsl(25, 97%, 53%)";
+var Dark_blue = "hsl(213, 19%, 18%)"
+var id = "selected"
+var result;
 
 button.addEventListener("click", function(){
-    console.log("Coucou")
+    rating_state.style.display = "none";
+    thanks_state.style.display = "block";
+    desired_rate.innerText = result;
 });
 
 
 
     values.forEach(rate => {
-        console.log(rate)
+        console.log(rate.className)
         rate.addEventListener("click", function(){
-            console.log(rate.textContent)
+           /* result = rate.textContent;
+            rate.style.background = orange;
+            rate.className += id;*/
+
+            switch (rate.className) {
+                case "selected":
+                    rate.style.background = Dark_blue
+                    rate.className = ""
+                    result = "";
+                    break;
+            
+                default:
+                    result = rate.textContent;
+                    rate.style.background = orange;
+                    rate.className += id;
+                    break;
+            }
+            });
         });
-    });

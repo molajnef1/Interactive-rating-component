@@ -39,7 +39,6 @@ body{
 }
 
 
-
 .container .rating > *{
     margin: 12px;
 }
@@ -74,9 +73,7 @@ body{
     background-color: var(--Medium-Grey);
 }
 
-.thanks{
-    display: none;
-}
+
 
 button{
     background:none;
@@ -89,4 +86,28 @@ button{
     font-weight: bold;
     width: 90%;
     cursor: pointer;
+}
+
+.thanks{
+    text-align: center;
+    display: none;
+}
+
+.thanks > *{
+    margin: 10px;
+}
+.thanks img{
+    width: 45%;
+}
+.thanks .bordered{
+    background-color: var(--Dark-Blue);
+    display: inline-block;
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    color: var(--Orange);
+}
+
+.thanks > p{
+    opacity: .7;
 }
