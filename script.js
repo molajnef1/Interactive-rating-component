@@ -31,7 +31,6 @@ button.addEventListener("click", function(){
                     rate.className = ""
                     result = "";
                     break;
-            
                 default:
                     result = rate.textContent;
                     rate.style.background = Medium_gray;
