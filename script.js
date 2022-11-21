@@ -5,7 +5,8 @@ var thanks_state = document.getElementById("thanks_state");
 var desired_rate = document.getElementById("desired-rate");
 var values = Array.from(rate_parent.children);
 var orange = "hsl(25, 97%, 53%)";
-var Dark_blue = "hsl(213, 19%, 18%)"
+var Dark_blue = "hsl(213, 19%, 18%)";
+var Medium_gray = "hsl(216, 12%, 54%)";
 var id = "selected"
 var result;
 
@@ -33,7 +34,7 @@ button.addEventListener("click", function(){
             
                 default:
                     result = rate.textContent;
-                    rate.style.background = orange;
+                    rate.style.background = Medium_gray;
                     rate.className += id;
                     break;
             }
