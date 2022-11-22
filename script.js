@@ -26,7 +26,15 @@ function get_the_selected_rate() {
     });
 }
 
-
+function delete_unwanted_selections() {
+    values.forEach(rate =>{
+        if(rate.className == selected){
+            rate.style.background = Dark_blue
+            rate.className = ""
+            desired_rate.innerText = ""
+        }
+    });
+}
 values.forEach(rate => {
     console.log(rate.className)
     rate.addEventListener("click", function(){
@@ -41,6 +49,7 @@ values.forEach(rate => {
             desired_rate.innerText = ""
             break;
         default:
+            delete_unwanted_selections();
             rate.style.background = Medium_gray;
             rate.className += selected;
             break;
