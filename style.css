@@ -74,13 +74,11 @@ body{
     text-decoration: none;
     text-align: center;
 }
-#rate:hover{
+.value > *:hover{
     background-color: var(--Orange);
 }
 
-#rate:active{
-    background-color: var(--Medium-Grey);
-}
+
 
 
 
