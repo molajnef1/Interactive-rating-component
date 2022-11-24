@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 :root{
 /*Colors*/
 
@@ -13,8 +14,9 @@
 --Dark-Blue: hsl(213, 19%, 18%);
 --Very-Dark-Blue: hsl(216, 12%, 8%);
 
-font-size: .9375em;
+
 box-sizing: border-box;
+font-family: Overpass;
 }
 
 *{
@@ -25,10 +27,12 @@ box-sizing: border-box;
 body{
     background-color: var(--Very-Dark-Blue);
     color: var(--White);
+    font-size: .9375em;
 }
 
 .container{
-    background-image: linear-gradient(var(--Dark-Blue),var(--Very-Dark-Blue));
+    background: radial-gradient(ellipse at top, var(--Dark-Blue), transparent),
+    radial-gradient(ellipse at bottom, var(--Very-Dark-Blue), transparent);
     width: 17rem;
     position: absolute;
     top: 50%;
@@ -36,6 +40,7 @@ body{
     transform: translate(-50%,-50%);
     padding: 1.5rem;
     border-radius: 20px;
+    font-size: 12px;
 }
 
 
@@ -43,7 +48,11 @@ body{
     margin: 12px;
 }
 
-
+.container .rating .icon-star{
+    background-color: var(--Dark-Blue);
+    padding: 10px;
+    border-radius: 50%;
+}
 .rating > p,a{
     opacity: .7;
 }
@@ -65,11 +74,11 @@ body{
     text-decoration: none;
     text-align: center;
 }
-.value > *:hover{
+#rate:hover{
     background-color: var(--Orange);
 }
 
-.value > *:active{
+#rate:active{
     background-color: var(--Medium-Grey);
 }
 
@@ -79,7 +88,7 @@ button{
     background:none;
     border: none;
     background-color: var(--Orange);
-    padding: 6px;
+    padding: 10px;
     border-radius: 20px;
     color: white;
     text-transform: uppercase;
@@ -97,12 +106,12 @@ button{
     margin: 10px;
 }
 .thanks img{
-    width: 45%;
+    width: 50%;
 }
 .thanks .bordered{
     background-color: var(--Dark-Blue);
     display: inline-block;
-    padding: 5px;
+    padding: 5px 20px;
     border-radius: 15px;
     margin-bottom: 30px;
     color: var(--Orange);
@@ -110,4 +119,24 @@ button{
 
 .thanks > p{
     opacity: .7;
+}
+
+@media screen and (min-width: 650px) {
+
+  .container{
+    width: 20rem;
+  }
+  .rating{
+    font-size: 13px;
+  }
+  .thanks{
+    width: 20rem;
+    font-size: 14px;
+  }
+  .thanks h2{
+    font-size: 1.7rem;
+  }
+  .message{
+    width: 100%;
+  }
 }

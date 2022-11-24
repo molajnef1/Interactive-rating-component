@@ -1,3 +1,5 @@
+'use strict';
+
 const button = document.getElementById("Submit");
 const rate_parent = document.getElementById("rate-parent");
 const rating_state = document.getElementById("rating");
@@ -14,10 +16,8 @@ let selection_counter = 0;
 button.addEventListener("click", function(){
     rating_state.style.display = "none";
     thanks_state.style.display = "block";
-    
     get_the_selected_rate();
 });
-
 function get_the_selected_rate() {
     values.forEach(rate => {
         if(rate.className == selected){
@@ -25,33 +25,30 @@ function get_the_selected_rate() {
         }
     });
 }
-
 function delete_unwanted_selections() {
     values.forEach(rate =>{
         if(rate.className == selected){
-            rate.style.background = Dark_blue
-            rate.className = ""
-            desired_rate.innerText = ""
+            rate.style.background = Dark_blue;
+            rate.className = "";
+            desired_rate.innerText = "";
         }
     });
 }
+
 values.forEach(rate => {
     console.log(rate.className)
-    rate.addEventListener("click", function(){
-           /* result = rate.textContent;
-            rate.style.background = orange;
-            rate.className += id;*/
-
+    rate.addEventListener("click", function(event){
+        event.preventDefault();
     switch (rate.className) {
         case "selected":
-            rate.style.background = Dark_blue
+            rate.style.background = Dark_blue;
             rate.className = ""
             desired_rate.innerText = ""
             break;
         default:
             delete_unwanted_selections();
             rate.style.background = Medium_gray;
-            rate.className += selected;
+            rate.className +=selected;
             break;
             }
             });
